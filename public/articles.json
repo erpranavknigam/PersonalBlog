@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "title": "Understanding React Components",
+      "body": "React components are the building blocks of any React application. They are small, reusable pieces of code that return a React element to be rendered to the page.",
+      "date": "2024-08-30"
+    },
+    {
+      "id": 2,
+      "title": "Getting Started with Node.js",
+      "body": "Node.js is a powerful JavaScript runtime built on Chrome's V8 engine. It allows developers to build scalable network applications using JavaScript on the server-side.",
+      "date": "2024-08-29"
+    },
+    {
+      "id": 3,
+      "title": "A Guide to CSS Flexbox",
+      "body": "Flexbox is a CSS layout module designed to provide a more efficient way to lay out, align, and distribute space among items in a container, even when their size is unknown.",
+      "date": "2024-08-28"
+    },
+    {
+      "id": 4,
+      "title": "Introduction to JavaScript Promises",
+      "body": "Promises in JavaScript represent the eventual completion (or failure) of an asynchronous operation and its resulting value. They are a key feature for handling async operations.",
+      "date": "2024-08-27"
+    },
+    {
+      "id": 5,
+      "title": "Exploring the New Features in ES2024",
+      "body": "ES2024 introduces several new features to JavaScript, including enhanced pattern matching, improved syntax for async operations, and more powerful array manipulation methods.",
+      "date": "2024-08-26"
+    }
+  ]
+  
