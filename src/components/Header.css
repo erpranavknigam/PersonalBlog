@@ -1,0 +1,43 @@
+.blogTitle {
+    display: flex;
+    align-items: center; /* Vertically centers the items */
+    justify-content: space-between; /* Positions .blogHeader in the center and .login on the right */
+    width: 100%;
+  }
+  
+  .blogHeader {
+    font-size: 2.5em;
+    font-weight: bolder;
+    text-align: center;
+    flex-grow: 1; /* Allows .blogHeader to grow and occupy the center space */
+  }
+  
+  .login {
+    margin-left: auto; /* Pushes the login button to the right */
+  }
+  
+  .underLines {
+    position: relative;
+    margin-top: 10px; /* Optional: adds some space between the title and the underline */
+    margin-bottom: 10px;
+  }
+  
+  .underLines::after, .underLines::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+  }
+  
+  .underLines::before {
+    bottom: 4px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  }

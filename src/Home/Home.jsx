@@ -12,7 +12,6 @@ function Home() {
             .then(response => response.json())
             .then(data => {
                 setArticles(data)
-                console.log(data)
             })
             .catch(err => console.error("Error Fetching Articles"))
     }, [])
@@ -23,11 +22,6 @@ function Home() {
 
     return (
         <>
-            <div className='blogTitle'>
-                <div className='blogHeader'>Personal Blog</div>
-                <div className='login'>Login</div>
-            </div>
-            <div className='underLines'></div>
             <div>
                 {
                     articles.map(article => (
@@ -37,7 +31,7 @@ function Home() {
                                     <h2 className='articleTitle'>{article.title}</h2>
                                     <small className='articleDate'>Published On :{article.date}</small>
                                 </div>
-                                <p>{article.body}</p>
+                                <p>{article.body} <span className='readMoreLink'>Click to Read More.</span></p>
                             </div>
                         </a>
 

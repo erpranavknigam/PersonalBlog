@@ -1,0 +1,31 @@
+.articleWrapper{
+    border: 2px solid;
+    padding: 5px 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.articleHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.titleOfArticle{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.dateOfArticle{
+    font-size: 1.2em;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.titleOfArticle::first-letter{
+    font-size: larger;
+    font-weight: bolder;
+    color:red
+}
