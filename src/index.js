@@ -79,7 +79,6 @@ app.post('/api/add', (req, res) => {
 
 app.post('/api/delete', (req, res) => {
     const {id} = req.body
-    console.log(id)
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 
