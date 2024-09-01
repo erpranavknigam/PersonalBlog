@@ -16,11 +16,5 @@
     "title": "Introduction to JavaScript Promises",
     "body": "Promises in JavaScript represent the eventual completion (or failure) of an asynchronous operation and its resulting value. They are a key feature for handling async operations.",
     "date": "2024-08-27"
-  },
-  {
-    "id": 5,
-    "title": "Exploring the New Features in ES2024",
-    "body": "ES2024 introduces several new features to JavaScript, including enhanced pattern matching, improved syntax for async operations, and more powerful array manipulation methods.",
-    "date": "2024-08-26"
   }
 ]

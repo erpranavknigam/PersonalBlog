@@ -60,8 +60,11 @@ app.post('/api/add', (req, res) => {
     const distFilePath = path.join(rootDir, 'public', 'articles.json');
 
     const articles = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-    const latestId = articles.length
-    const newId = latestId + 1
+    // Find the article with the maximum ID
+    const maxIdArticle = articles.reduce((max, article) => {
+        return article.id > max.id ? article : max;
+    }, articles[0]);
+    const newId = maxIdArticle.id + 1
     article["id"] = newId
     articles.push(article)
     try {
@@ -78,7 +81,7 @@ app.post('/api/add', (req, res) => {
 })
 
 app.post('/api/delete', (req, res) => {
-    const {id} = req.body
+    const { id } = req.body
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 
@@ -88,7 +91,7 @@ app.post('/api/delete', (req, res) => {
     // Construct the file path to the articles.json file in the public folder
     const filePath = path.join(rootDir, 'dist', 'articles.json');
     const distFilePath = path.join(rootDir, 'public', 'articles.json');
-debugger
+    debugger
     const articles = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
     const filtered = Array.from(articles).filter(x => x.id !== Number(id))
 
