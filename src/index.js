@@ -45,7 +45,7 @@ app.post('/api/update', (req, res) => {
     }
 });
 
-app.post('/api/add', (req,res) => {
+app.post('/api/add', (req, res) => {
     const article = req.body
 
     // Get the current filename and directory
@@ -59,15 +59,43 @@ app.post('/api/add', (req,res) => {
     const filePath = path.join(rootDir, 'dist', 'articles.json');
     const distFilePath = path.join(rootDir, 'public', 'articles.json');
 
-    const articles = JSON.parse(fs.readFileSync(filePath,'utf-8'))
+    const articles = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
     const latestId = articles.length
-    const newId = latestId+1
+    const newId = latestId + 1
     article["id"] = newId
     articles.push(article)
-    try{
+    try {
         fs.writeFileSync(filePath, JSON.stringify(articles, null, 2), 'utf-8');
         fs.writeFileSync(distFilePath, JSON.stringify(articles, null, 2), 'utf-8');
 
+        // Respond with success message
+        res.status(200).send({ message: "Article Added Successfully" });
+    } catch (error) {
+        // Handle errors
+        console.error('Error:', error);
+        res.status(500).send({ message: "Operation Failed" });
+    }
+})
+
+app.post('/api/delete', (req, res) => {
+    const {id} = req.body
+    console.log(id)
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+    // Adjust the __dirname to point to the root of the project
+    const rootDir = path.resolve(__dirname, '../');
+
+    // Construct the file path to the articles.json file in the public folder
+    const filePath = path.join(rootDir, 'dist', 'articles.json');
+    const distFilePath = path.join(rootDir, 'public', 'articles.json');
+debugger
+    const articles = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+    const filtered = Array.from(articles).filter(x => x.id !== Number(id))
+
+    try {
+        fs.writeFileSync(filePath, JSON.stringify(filtered, null, 2), 'utf-8')
+        fs.writeFileSync(distFilePath, JSON.stringify(filtered, null, 2), 'utf-8')
         // Respond with success message
         res.status(200).send({ message: "Article Added Successfully" });
     } catch (error) {

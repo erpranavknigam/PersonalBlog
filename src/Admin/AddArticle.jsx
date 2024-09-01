@@ -8,18 +8,6 @@ const AddArticle = () => {
     const [content, setContent] = useState('');
     const [description, setDescription] = useState('');
 
-    // useEffect(() => {
-    //     fetch('/articles.json')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             const filtered = Array.from(data).filter(x => x.id === Number(id));
-    //             setTitle(filtered[0].title);
-    //             setContent(filtered[0].body);
-    //             setDescription(filtered[0].fullContent)
-    //         });
-    // }, []);
-
-
     const changeArticleTitle = (event) => {
         setTitle(event.target.value);
     };
